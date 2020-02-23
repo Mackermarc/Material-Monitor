@@ -1,4 +1,4 @@
-# OctoPrint-Materialmonitor
+# Material-Monitor
 
 **TODO:** Describe what your plugin does.
 
