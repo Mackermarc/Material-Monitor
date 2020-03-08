@@ -8,23 +8,19 @@ $(function() {
     function MaterialmonitorViewModel(parameters) {
         var self = this;
         self.settings = parameters[0];
-
-        self.Loadcell = ko.observable();
-
-
-        self.ownSettings = {};
+        self.HT = ko.observableArray([]);
         self.Loadcell = ko.observableArray([]);
 
 
         self.addLoadcell = function() {
             console.log("button gedrückt")
-            self.Loadcell({"name": ko.observable(""),
+            self.Loadcell({"name": ko.observable("new"),
                             "sckpin": ko.observable(""),
                             "dtpin": ko.observable(""),
                             "refunit": ko.observable(""),
                             "matname": ko.observable(""),
                             "weight": ko.observable(""),
-                            "color": ko.observable(""),
+                            "color": ko.observable("#000000"),
                             "spool": ko.observable("")});
                 self.settings.settings.plugins.materialmonitor.Loadcell.push(self.Loadcell());
                 $("#LoadcellEditor").modal("show");
@@ -32,11 +28,25 @@ $(function() {
 
         self.removeLoadcell = function(row) {
 			self.settings.settings.plugins.materialmonitor.Loadcell.remove(row);
-		}
+		},
 		self.editLoadcell = function(data) {
 			self.Loadcell(data);
 			$("#LoadcellEditor").modal("show");
-		}
+		};
+
+
+		self.addHT = function() {
+            console.log("button gedrückt")
+            self.HT({"htname": ko.observable("new"),
+                            "htpin": ko.observable("")});
+                self.settings.settings.plugins.materialmonitor.HT.push(self.HT());
+
+        };
+
+        self.removeHT = function(row) {
+			self.settings.settings.plugins.materialmonitor.HT.remove(row);
+		};
+
 
 
     }

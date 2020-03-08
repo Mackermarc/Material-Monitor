@@ -25,6 +25,37 @@
 				</td>
 	    </tr>
 	</tbody>
+
+
+</table>
+
+<h4>Humidity and Temperatur Sensor Settings</h4>
+<table class="table table-condensed">
+	<thead>
+		<tr>
+			<td>{{ _('Sensor Name ') }}</td>
+			<td style="text-align:center">{{ _('GPIO-Pin') }}</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td style="text-align:center"><div class="btn-group"><button class="btn btn-mini" data-bind="click: addHT"><i class="icon icon-plus" aria-hidden="true"></i></button></div></td>
+		</tr>
+	</thead>
+	<tbody data-bind="foreach: settings.settings.plugins.materialmonitor.HT">
+		<tr data-bind="attr: {title: name}">
+			    <td><div class="controls"><input type="text" class="input-block-level" data-bind="value: htname" /></div></td>
+				<td><div class="controls"><input type="number" min="0" class="input input-small" data-bind="value: htpin" /></div></td>
+				<td></td>
+			    <td></td>
+			    <td></td>
+				<td style="text-align:center">
+				<div class="btn-group">
+					<a href="#" class="btn btn-mini icon-trash" data-bind="click: $root.removeHT"></a>
+				</div>
+				</td>
+	    </tr>
+	</tbody>
+
 </table>
 
 <div id="LoadcellEditor" data-bind="with: Loadcell" class="modal large hide fade">
@@ -36,8 +67,8 @@
 		<table class="table table-condensed">
 			<tr>
 				<td><div class="controls"><label class="control-label">{{ _('Loadcell Name') }}</label><input type="text" class="input-block-level" data-bind="value: name" /></div></td>
-				<td><div class="controls"><label class="control-label">{{ _('SCK-Pin') }}</label><input type="number" min="0" class="input input-small" data-bind="value: sckpin" /></div></td>
-				<td><div class="controls"><label class="control-label">{{ _('DT-Pi n') }}</label><input type="number" min="0" class="input input-small" data-bind="value: dtpin"  /></div></td>
+				<td><div class="controls"><label class="control-label">{{ _('GPIO SCK-Pin') }}</label><input type="number" min="0" class="input input-small" data-bind="value: sckpin" /></div></td>
+				<td><div class="controls"><label class="control-label">{{ _('GPIO DT-Pin') }}</label><input type="number" min="0" class="input input-small" data-bind="value: dtpin"  /></div></td>
 				<td><div class="controls"><label class="control-label">{{ _('Reference Unit') }}</label><input type="number" class="input input-small" data-bind="value: refunit" /></div></td>
 			</tr>
 			<tr>
@@ -54,4 +85,3 @@
 		<a href="#" class="btn" data-dismiss="modal" aria-hidden="true">{{ _('Close') }}</a>
 	</div>
 </div>
-

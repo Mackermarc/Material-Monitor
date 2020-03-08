@@ -12,10 +12,13 @@ class MaterialMonitorPlugin(octoprint.plugin.SettingsPlugin,
 	##~~ SettingsPlugin mixin
 	def on_settings_initialized(self):
 		self.Loadcell = self._settings.get(["Loadcell"])
+		self.HT = self._settings.get(["HT"])
 		self._logger.info("Settings initialized %s", self.Loadcell)
 
+
 	def get_settings_defaults(self):
-		return dict(Loadcell=[])
+		return dict(Loadcell=[],
+					HT=[])
 
 	##~~ AssetPlugin mixin
 
