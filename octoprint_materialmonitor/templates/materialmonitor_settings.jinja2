@@ -67,16 +67,22 @@
 		<table class="table table-condensed">
 			<tr>
 				<td><div class="controls"><label class="control-label">{{ _('Loadcell Name') }}</label><input type="text" class="input-block-level" data-bind="value: name" /></div></td>
-				<td><div class="controls"><label class="control-label">{{ _('GPIO SCK-Pin') }}</label><input type="number" min="0" class="input input-small" data-bind="value: sckpin" /></div></td>
-				<td><div class="controls"><label class="control-label">{{ _('GPIO DT-Pin') }}</label><input type="number" min="0" class="input input-small" data-bind="value: dtpin"  /></div></td>
-				<td><div class="controls"><label class="control-label">{{ _('Reference Unit') }}</label><input type="number" class="input input-small" data-bind="value: refunit" /></div></td>
+				<td width="12%"><div class="controls"><label class="control-label">{{ _('GPIO SCK-Pin') }}</label><input type="number" min="0" class="input input-small" data-bind="value: sckpin" /></div></td>
+		s		<td width="12%"><div class="controls"><label class="control-label">{{ _('GPIO DT-Pin') }}</label><input type="number" min="0" class="input input-small" data-bind="value: dtpin"  /></div></td>
+				<td width="12%"><div class="controls"><label class="control-label">{{ _('Reference Unit') }}</label><input type="number" class="input input-small" data-bind="value: refunit" /></div></td>
+				<td width="10%"><div class="controls"><label class="control-label">{{ _('Channel') }}</label>
+				        <select  style="width: 50px" data-bind="value: channel">
+				            <option value"A">A</option>
+                            <option value"B">B</option>
+                        </select>
+				</div></td>
 			</tr>
 			<tr>
 				<td><div class="controls"><label class="control-label">{{ _('Material Name') }}</label><input type="text" class="input-block-level" data-bind="value: matname" /></div></td>
 				<td><div class="controls"><label class="control-label">{{ _('Material Weight') }}</label><input type="number" min="0" class="input input-small" data-bind="value: weight" /></div></td>
 				<td><div class="controls"><label class="control-label">{{ _('Material Color') }}</label><input type="color" class="input input-small" data-bind="value: color" /></div></td>
 				<td><div class="controls"><label class="control-label">{{ _('Spool Weight') }}</label><input type="number"  min="0" class="input input-small" data-bind="value: spool" /></div></td>
-
+                <td></td>
 
 			</tr>
 		</table>

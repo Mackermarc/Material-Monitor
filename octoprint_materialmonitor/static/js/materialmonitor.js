@@ -16,6 +16,7 @@ $(function() {
             console.log("button gedrückt")
             self.Loadcell({"name": ko.observable("new"),
                             "sckpin": ko.observable(""),
+                            "channel": ko.observable(""),
                             "dtpin": ko.observable(""),
                             "refunit": ko.observable(""),
                             "matname": ko.observable(""),
